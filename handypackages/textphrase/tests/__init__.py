@@ -1,0 +1,3 @@
+from .TemplateTagsTests import TemplateTagsTests
+from .ModelsTests import TextPhraseModelTests
+from .ContextProcessorsTests import ContextProcessorsTests

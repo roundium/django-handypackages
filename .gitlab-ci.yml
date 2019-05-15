@@ -10,6 +10,7 @@ cache:
 before_script:
   - python -V
   - pip install pipenv
+  - pipenv shell
   - pipenv install --dev
   - cp test_project/settings.py.sample test_project/local_settings.py
   - sed -i -e "s/SECRET_KEY = '.*'/SECRET_KEY = '_'/" upperly/settings.py

@@ -3,7 +3,7 @@ from easy_select2.widgets import Select2
 
 from handypackages.settings import (TEXT_PHRASE_LANGUAGES,
                                  TEXT_PHRASE_MODEL_PHRASE_TYPES,)
-from handypackages.textphrase.models import TextPhrase
+from .models import TextPhrase
 
 
 class TextPhraseForm(forms.ModelForm):

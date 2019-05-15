@@ -8,6 +8,7 @@ pep8 = "*"
 autopep8 = "*"
 pylint = "*"
 yapf = "*"
+coverage = "*"
 
 [packages]
 django = "*"

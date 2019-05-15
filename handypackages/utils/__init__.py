@@ -1,1 +1,1 @@
-default_app_config = 'handypackage.utils.apps.PackageUtilsConfig'
+default_app_config = 'handypackages.utils.apps.PackageUtilsConfig'

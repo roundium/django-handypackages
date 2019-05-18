@@ -4,7 +4,7 @@ register = template.Library()
 
 
 @register.simple_tag(takes_context=True)
-def single_text_phrase(context, phrase_type=None, language=None):
+def single_text_phrase(context, slug=None, language=None):
     """
     for using this template tag you must
     enable one of the text_phrase context_processors.
@@ -23,14 +23,14 @@ def single_text_phrase(context, phrase_type=None, language=None):
             "Please Enable one of the Text Phrase Context Processors"
         )
     if not language:
-        phrase = phrases.filter(phrase_type=phrase_type)
+        phrase = phrases.filter(slug=slug)
         return phrase.first()
-    phrase = phrases.filter(phrase_type=phrase_type, language=language)
+    phrase = phrases.filter(slug=slug, language=language)
     return phrase.first()
 
 
 @register.simple_tag(takes_context=True)
-def multi_text_phrase(context, phrase_type=None, language=None):
+def multi_text_phrase(context, slug=None, language=None):
     """
     for using this template tag you must
     enable one of text_phrase context_processors.
@@ -51,5 +51,5 @@ def multi_text_phrase(context, phrase_type=None, language=None):
             "Please Enable one of the Text Phrase Context Processors"
         )
     if not language:
-        return phrases.filter(phrase_type=phrase_type)
-    return phrases.filter(phrase_type=phrase_type, language=language)
+        return phrases.filter(slug=slug)
+    return phrases.filter(slug=slug, language=language)

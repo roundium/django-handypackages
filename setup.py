@@ -19,6 +19,7 @@ setup(
     include_package_data=True,
     description='A Handy Tools For Your Django Project, provided tools: models, utils, context processors, templates, template tags',
     long_description=README,
+    long_description_content_type='text/markdown',
     author='Chatr-e Nili',
     author_email='info@cnili.com',
     url='https://gitlab.com/cnili/django-handypackages',

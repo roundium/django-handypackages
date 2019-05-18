@@ -1,22 +1,37 @@
-image: python:latest
+before_script:
+  - python -V
+  - make init
+  - cp test_project/settings.py.sample test_project/local_settings.py
+  - sed -i -e "s/SECRET_KEY = '.*'/SECRET_KEY = '_'/" test_project/local_settings.py
+  - make setup
+
+variables:
+  CODECOV_TOKEN: '0707a6a4-2ac4-4440-a35d-e43c77fd57d2'
+  PIPENV_VENV_IN_PROJECT: 1
+  PIPENV_IGNORE_VIRTUALENVS: 1
 
 stages:
   - test
 
-cache:
-  paths:
-  - ~/.cache/pip/
-
-before_script:
-  - python -V
-  - pip install pipenv
-  - pipenv shell
-  - pipenv install --dev
-  - cp test_project/settings.py.sample test_project/local_settings.py
-  - sed -i -e "s/SECRET_KEY = '.*'/SECRET_KEY = '_'/" upperly/settings.py
-
-test:
+python3.4:
   stage: test
-  script:
-    - ./test_manage.py test
-    - coverage run test_manage.py test handypackegs.tests -v 2
+  image: python:3.4
+  script: pipenv run tox -v -e py34
+
+python3.5:
+  stage: test
+  image: python:3.5
+  script: pipenv run tox -v -e py35
+
+python3.6:
+  stage: test
+  image: python:3.6
+  script: pipenv run tox -v -e py36
+
+python3.7:
+  stage: test
+  image: python:3.7
+  script: pipenv run tox -v -e py37
+
+after_script:
+  - pipenv run codecov

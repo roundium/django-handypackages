@@ -35,7 +35,8 @@ INSTALLED_APPS = [
 
     # Local Apps
     'handypackages.utils',
-    'handypackages.textphrase'
+    'handypackages.textphrase',
+    'handypackages.contact'
 ]
 
 MIDDLEWARE = [

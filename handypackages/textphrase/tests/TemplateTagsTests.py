@@ -7,14 +7,17 @@ from handypackages.textphrase.models import TextPhrase
 class TemplateTagsTests(TestCase):
     def setUp(self):
         TextPhrase.objects.create(
-            phrase_type="language", text="welcome", language="en")
+            slug="language", text="welcome", language="en")
         TextPhrase.objects.create(
-            phrase_type="language", text="bienvenu", language="fr")
+            slug="language", text="bienvenu", language="fr")
         TextPhrase.objects.create(
-            phrase_type="language", text="Bonjour", language="fr")
+            slug="language", text="salut", language="fr")
         TextPhrase.objects.create(
-            phrase_type="facebook_page", text="https://facebook.com",
+            slug="facebook_page", text="https://facebook.com",
             language="global")
+
+    def tearDown(self):
+        TextPhrase.objects.all().delete()
 
     def render_template(self, string, context=None):
         context = context or {}
@@ -61,7 +64,8 @@ class TemplateTagsTests(TestCase):
         )
         answer = ('<p>welcome</p>'
                   '<p>bienvenu</p>'
-                  '<p>Bonjour</p>')
+                  '<p>salut</p>'
+                  )
         self.assertEqual(rendered, answer,
                          "multi_text_phrase templatetag does not work")
 
@@ -73,8 +77,7 @@ class TemplateTagsTests(TestCase):
             '{% endfor %}',
             {'text_phrases': phrases}
         )
-        answer = ('<p>bienvenu</p>'
-                  '<p>Bonjour</p>')
+        answer = ('<p>bienvenu</p><p>salut</p>')
         self.assertEqual(rendered, answer,
                          "multi_text_phrase templatetag does not work")
 

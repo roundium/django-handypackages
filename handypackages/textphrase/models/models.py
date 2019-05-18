@@ -14,16 +14,19 @@ class TextPhraseAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Title')
     )
-    phrase_type = models.CharField(
-        db_index=True,
+    slug = models.SlugField(
+        allow_unicode=True,
         max_length=255,
-        verbose_name=_('Phrase Type')
+        db_index=True,
+        verbose_name=_('Slug')
     )
     text = models.TextField(
         verbose_name=_('Text')
     )
     language = models.CharField(
-        default="global", max_length=6,
+        default="global",
+        max_length=6,
+        db_index=True,
         verbose_name=_('Language')
     )
 
@@ -32,14 +35,15 @@ class TextPhraseAbstractModel(models.Model):
         return title by default.
         if title is null or empty phrase_type will be returned.
         """
-        return self.title or self.phrase_type
+        return self.title or self.slug
 
     def __unicode__(self):
-        return u'%s' % (self.title or self.phrase_type)
+        return u'%s' % (self.title or self.slug)
 
     class Meta:
         abstract = True
-        ordering = ('phrase_type',)
+        ordering = ('slug',)
+        unique_together = (("slug", "language", "title"),)
         verbose_name = _('Text Phrase')
         verbose_name_plural = _('Text Phrases')
 

@@ -1,9 +1,9 @@
 from django.test import RequestFactory, TestCase, override_settings
 from django.urls import reverse
 
-from handypackages.textphrase.models import TextPhrase
 from handypackages.settings import (TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME,
-                                 TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME,)
+                                    TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME)
+from handypackages.textphrase.models import TextPhrase
 
 
 class ContextProcessorsTests(TestCase):
@@ -12,14 +12,21 @@ class ContextProcessorsTests(TestCase):
 
         # create some records for testing
         self.first_phrase = TextPhrase.objects.create(
-            phrase_type="language", text="welcome", language="en")
+            slug="language", text="welcome", language="en")
         self.first_phrase = TextPhrase.objects.create(
-            phrase_type="language", text="Bienvenue", language="fr")
+            slug="language", text="Bienvenue", language="fr")
+        self.first_phrase = TextPhrase.objects.create(
+            slug="language", text="salut", language="fr")
         self.second_phrase = TextPhrase.objects.create(
-            phrase_type="facebook_page", text="https://facebook.com",
+            slug="facebook_page", text="https://facebook.com",
             language="global")
 
         self.all_phrases = TextPhrase.objects.all()
+
+    def tearDown(self):
+        # delete all phrases
+        # other wise we have conflict with context processors tests
+        TextPhrase.objects.all().delete()
 
     def test_simple_text_phrase_cp(self):
         response = self.client.get(reverse("admin:index"), follow=True)

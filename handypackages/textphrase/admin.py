@@ -5,8 +5,9 @@ from .models import TextPhrase
 
 
 class TextPhraseAdminPanel(admin.ModelAdmin):
-    list_display = ['title', 'phrase_type', 'text']
-    search_fields = ['title', 'phrase_type', 'text']
+    list_display = ['title', 'slug', 'text']
+    search_fields = ['title', 'slug', 'text']
+    prepopulated_fields = {'slug': ('title',), }
     form = TextPhraseForm
 
 

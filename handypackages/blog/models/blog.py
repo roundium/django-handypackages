@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
-from .tag import Tag
+from handypackages.tag.models import Tag
 
 
 class PublishedBlogManager(Manager):

@@ -3,16 +3,16 @@ import tempfile
 from django.conf import settings
 from django.conf.urls import url
 from django.contrib.auth.models import User
-from django.contrib.sitemaps.views import sitemap
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import RequestFactory, TestCase
 from django.urls import reverse_lazy
 from django.utils import timezone
 from filer.models import Image
 
-from handypackages.blog.models import Blog, Tag
+from handypackages.blog.models import Blog
 from handypackages.blog.rss_feed.example_urls import urlpatterns
 from handypackages.blog.rss_feed.view import BlogFeed
+from handypackages.tag.models import Tag
 
 
 def simple_blog_single_view(request, slug):

@@ -4,14 +4,14 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
-from django.utils import timezone
 from filer.models import Image
 
-from handypackages.blog.models import Blog
 from handypackages.tag.models import Tag
 
+from .models import Product
 
-class TestBlogModels(TestCase):
+
+class TestProductModels(TestCase):
     def setUp(self):
         # make temp folder because we want to delete files after test
         # and this code do that automatically
@@ -35,54 +35,37 @@ class TestBlogModels(TestCase):
             image = Image(
                 owner=self.user,
                 file=test_image,
-                original_filename="blog_image_file",
-                name='test_blog_image'
+                original_filename="product_image_file",
+                name='test_product_image'
             )
             image.save()
 
-        blog = Blog(
-            title='blog test title',
-            text='blog test',
-            slug='blog-test-title',
+        product = Product(
+            title='product test title',
+            text='product test',
+            slug='product-test-title',
             image=image,
-            publish_time=timezone.now()
+            price="25000 T"
         )
-        blog.save()
-        blog.tags.add(*self.tags)
-        self.blog = blog
+        product.save()
+        product.tags.add(*self.tags)
+        self.product = product
 
-    def test_blog_model(self):
+    def test_product_model(self):
         self.assertEqual(
-            str(self.blog),
-            "blog test title",
-            "__str__ in blog model have an issue!"
-        )
-        self.assertEqual(
-            self.blog.__unicode__(),
-            "blog test title",
-            "__unicode__ in blog model have an issue!"
+            str(self.product),
+            "product test title",
+            "__str__ in product model have an issue!"
         )
 
         self.assertEqual(
-            self.blog,
-            Blog.published.all()[0],
-            "published manager have an issue!"
+            self.product.__unicode__(),
+            "product test title",
+            "__unicode__ in product model have an issue!"
         )
 
         self.assertEqual(
             set(Tag.objects.all()),
-            set(self.blog.blog_tags),
+            set(self.product.product_tags),
             "blog blog_tags method does not work!"
-        )
-
-    def test_tag_model(self):
-        self.assertEqual(
-            str(self.tags[0]),
-            "django",
-            "Tag Model __str__ method have an issue!",
-        )
-        self.assertEqual(
-            self.tags[0].__unicode__(),
-            "django",
-            "Tag Model __unicode__ method have an issue!",
         )

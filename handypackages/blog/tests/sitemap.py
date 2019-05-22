@@ -9,9 +9,10 @@ from django.test import RequestFactory, TestCase
 from django.utils import timezone
 from filer.models import Image
 
-from handypackages.blog.models import Blog, Tag
+from handypackages.blog.models import Blog
 from handypackages.blog.rss_feed.example_urls import urlpatterns
 from handypackages.blog.sitemap import BlogSitemap
+from handypackages.tag.models import Tag
 
 
 def simple_blog_single_view(request, slug):

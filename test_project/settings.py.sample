@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'handypackages.utils',
     'handypackages.textphrase',
     'handypackages.contact',
-    'handypackages.blog'
+    'handypackages.tag',
+    'handypackages.blog',
+    'handypackages.product',
 ]
 
 MIDDLEWARE = [

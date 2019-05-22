@@ -41,7 +41,7 @@ class TestRssFeedView(TestCase):
             Tag.objects.create(value="app"),
         ]
 
-        with open("./handypackages/blog/tests/test_upload_image.jpg", 'rb') as image:
+        with open("./handypackages/test_requirements/test_upload_image.jpg", 'rb') as image:
             test_image = SimpleUploadedFile(
                 "test_upload_image.jpg",
                 image.read(),

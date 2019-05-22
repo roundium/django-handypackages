@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Blog, Tag
+from .models import Blog
 
 
 class BlogAdminPanel(admin.ModelAdmin):
@@ -12,10 +12,4 @@ class BlogAdminPanel(admin.ModelAdmin):
     readonly_fields = ['create_time']
 
 
-class TagAdminPanel(admin.ModelAdmin):
-    list_display = ['value', 'create_time']
-    readonly_fields = ['create_time']
-
-
 admin.site.register(Blog, BlogAdminPanel)
-admin.site.register(Tag, TagAdminPanel)

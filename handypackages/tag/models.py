@@ -27,4 +27,4 @@ class TagAbstractMode(models.Model):
 
 
 class Tag(TagAbstractMode):
-    """ Tags will use with blog and product apps """
+    """ Tags will use with product app """

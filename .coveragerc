@@ -2,8 +2,8 @@
 source = handypackages
 branch = True
 omit =
-    handypackages/migrations/*
-    handypackages/tests/*
+    *__init__*
+    *tests*
 
 [report]
 exclude_lines =

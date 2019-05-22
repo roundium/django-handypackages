@@ -30,7 +30,7 @@ def generate_twitter_share_link(parser, token):
     generate share link for twitter
     example:
         {% load link_creators %}
-        <a href="{% twitter_share "django" "https://djangoproject.com/" "django,python,pypi" %}">
+        {% twitter_share "django" "https://google.com/" "django,python" %}"
         share in facebook
         </a>
     """

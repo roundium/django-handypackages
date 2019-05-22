@@ -12,7 +12,8 @@ class ContactAbstractModel(models.Model):
     email = models.EmailField(verbose_name=_("Email"), max_length=255)
     phone = PhoneNumberField(verbose_name=_("Phone"), null=False, blank=False)
     message = models.TextField(verbose_name=_("Message"))
-    time_send = models.DateTimeField(auto_now_add=True, verbose_name=_('Time Send'))
+    time_send = models.DateTimeField(
+        auto_now_add=True, verbose_name=_('Time Send'))
 
     def __str__(self):
         return self.email

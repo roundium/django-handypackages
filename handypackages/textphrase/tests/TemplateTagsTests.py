@@ -7,14 +7,14 @@ from handypackages.textphrase.models import TextPhrase
 class TemplateTagsTests(TestCase):
     def setUp(self):
         TextPhrase.objects.create(
-            slug="language", text="welcome", language="en")
+            slug='language', text='welcome', language='en')
         TextPhrase.objects.create(
-            slug="language", text="bienvenu", language="fr")
+            slug='language', text='bienvenu', language='fr')
         TextPhrase.objects.create(
-            slug="language", text="salut", language="fr")
+            slug='language', text='salut', language='fr')
         TextPhrase.objects.create(
-            slug="facebook_page", text="https://facebook.com",
-            language="global")
+            slug='facebook_page', text='https://facebook.com',
+            language='global')
 
     def tearDown(self):
         TextPhrase.objects.all().delete()
@@ -42,7 +42,7 @@ class TemplateTagsTests(TestCase):
         )
         answer = '<a href="https://facebook.com">Facebook Page<a/>'
         self.assertEqual(rendered, answer,
-                         "single_text_phrase templatetag does not work")
+                         'single_text_phrase templatetag does not work')
 
         rendered = self.render_template(
             '{% load phrases_tags %}'
@@ -52,7 +52,7 @@ class TemplateTagsTests(TestCase):
         )
         answer = '<p>welcome</p>'
         self.assertEqual(rendered, answer,
-                         "single_text_phrase templatetag does not work")
+                         'single_text_phrase templatetag does not work')
 
         rendered = self.render_template(
             '{% load phrases_tags %}'
@@ -67,7 +67,7 @@ class TemplateTagsTests(TestCase):
                   '<p>salut</p>'
                   )
         self.assertEqual(rendered, answer,
-                         "multi_text_phrase templatetag does not work")
+                         'multi_text_phrase templatetag does not work')
 
         rendered = self.render_template(
             '{% load phrases_tags %}'
@@ -79,7 +79,7 @@ class TemplateTagsTests(TestCase):
         )
         answer = ('<p>bienvenu</p><p>salut</p>')
         self.assertEqual(rendered, answer,
-                         "multi_text_phrase templatetag does not work")
+                         'multi_text_phrase templatetag does not work')
 
         self.assertRaises(
             Exception,

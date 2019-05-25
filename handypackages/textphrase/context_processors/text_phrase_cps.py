@@ -32,7 +32,7 @@ def text_phrase_language_cp(request):
     enable context processor:
         'context_processors': [
             ...
-            "handypackages.textphrase.context_processors.text_phrase_cps.text_phrase_language_cp",
+            'handypackages.textphrase.context_processors.text_phrase_cps.text_phrase_language_cp',
             ...
         ]
     """

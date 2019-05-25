@@ -3,7 +3,7 @@ from django.template.defaultfilters import urlencode
 
 
 class FacebookShareLinkCreatorNode(template.Node):
-    url = "https://www.facebook.com/sharer/sharer.php?u=%s&t=%s"
+    url = 'https://www.facebook.com/sharer/sharer.php?u=%s&t=%s'
 
     def __init__(self, link, title):
         self.link = link[1:-1]
@@ -17,7 +17,7 @@ class FacebookShareLinkCreatorNode(template.Node):
 
 
 class TwitterShareLinkCreatorNode(template.Node):
-    url = "https://twitter.com/share?text=%s&url=%s&hashtags=%s"
+    url = 'https://twitter.com/share?text=%s&url=%s&hashtags=%s'
 
     def __init__(self, text, link, hashtags):
         self.text = text[1:-1]

@@ -30,12 +30,12 @@ class BlogAbstractModel(models.Model):
         verbose_name=_('Text')
     )
     create_time = models.DateTimeField(
-        verbose_name=_("Time Create"),
+        verbose_name=_('Time Create'),
         editable=False,
         auto_now_add=True
     )
     publish_time = models.DateTimeField(
-        verbose_name=_("Publish Time"),
+        verbose_name=_('Publish Time'),
         auto_now=False,
         auto_now_add=False
     )

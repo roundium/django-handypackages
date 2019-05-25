@@ -3,7 +3,7 @@ for using those context processors you must add the TextPhrase Model
 in HANDYTOOLS_MODELS tuple in you settings.py
 """
 from handypackages.settings import (TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME,
-                                 TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME,)
+                                    TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME,)
 from handypackages.textphrase.models import TextPhrase
 
 

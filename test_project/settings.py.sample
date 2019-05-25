@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     # Third-party Packages
     'filer',
@@ -36,7 +37,11 @@ INSTALLED_APPS = [
     # Local Apps
     'handypackages.utils',
     'handypackages.textphrase',
-    'handypackages.contact'
+    'handypackages.contact',
+    'handypackages.tag',
+    'handypackages.blog',
+    'handypackages.product',
+    'handypackages.gallery',
 ]
 
 MIDDLEWARE = [

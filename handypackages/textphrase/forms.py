@@ -2,7 +2,8 @@ from django import forms
 from easy_select2.widgets import Select2
 
 from handypackages.settings import (TEXT_PHRASE_LANGUAGES,
-                                 TEXT_PHRASE_MODEL_PHRASE_TYPES,)
+                                    TEXT_PHRASE_MODEL_PHRASE_TYPES,)
+
 from .models import TextPhrase
 
 

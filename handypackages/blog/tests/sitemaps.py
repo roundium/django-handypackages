@@ -11,7 +11,7 @@ from filer.models import Image
 
 from handypackages.blog.models import Blog
 from handypackages.blog.rss_feed.example_urls import urlpatterns
-from handypackages.blog.sitemap import BlogSitemap
+from handypackages.blog.sitemaps import BlogSitemap
 from handypackages.tag.models import Tag
 
 

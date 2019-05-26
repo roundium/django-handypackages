@@ -43,7 +43,7 @@ class TextPhraseAbstractModel(models.Model):
     class Meta:
         abstract = True
         ordering = ('slug',)
-        unique_together = (("slug", "language", "title"),)
+        unique_together = (('slug', 'language', 'title'),)
         verbose_name = _('Text Phrase')
         verbose_name_plural = _('Text Phrases')
 

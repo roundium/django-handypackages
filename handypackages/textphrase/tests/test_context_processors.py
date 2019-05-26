@@ -12,14 +12,14 @@ class ContextProcessorsTests(TestCase):
 
         # create some records for testing
         self.first_phrase = TextPhrase.objects.create(
-            slug="language", text="welcome", language="en")
+            slug='language', text='welcome', language='en')
         self.first_phrase = TextPhrase.objects.create(
-            slug="language", text="Bienvenue", language="fr")
+            slug='language', text='Bienvenue', language='fr')
         self.first_phrase = TextPhrase.objects.create(
-            slug="language", text="salut", language="fr")
+            slug='language', text='salut', language='fr')
         self.second_phrase = TextPhrase.objects.create(
-            slug="facebook_page", text="https://facebook.com",
-            language="global")
+            slug='facebook_page', text='https://facebook.com',
+            language='global')
 
         self.all_phrases = TextPhrase.objects.all()
 
@@ -29,16 +29,16 @@ class ContextProcessorsTests(TestCase):
         TextPhrase.objects.all().delete()
 
     def test_simple_text_phrase_cp(self):
-        response = self.client.get(reverse("admin:index"), follow=True)
+        response = self.client.get(reverse('admin:index'), follow=True)
         self.assertEqual(
             set(response.context[TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME]),
             set(self.all_phrases),
-            "text_phrase_simple_cp context processor does not work")
+            'text_phrase_simple_cp context processor does not work')
 
     @override_settings(LANGUAGE_CODE='fr', LANGUAGES=(('fr', 'French'),))
     def test_lang_text_phrase(self):
-        response = self.client.get(reverse("admin:index"), follow=True)
+        response = self.client.get(reverse('admin:index'), follow=True)
         self.assertEqual(
             set(response.context[TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME]),
-            set(TextPhrase.objects.filter(language="fr")),
-            "text_phrase_language_cp context processor does not work")
+            set(TextPhrase.objects.filter(language='fr')),
+            'text_phrase_language_cp context processor does not work')

@@ -17,25 +17,26 @@ class TestProductModels(TestCase):
         # and this code do that automatically
         settings.MEDIA_ROOT = tempfile.mkdtemp()
 
-        self.user = User.objects.create_superuser("test_user", "", "testing")
+        self.user = User.objects.create_superuser('test_user', '', 'testing')
 
         self.tags = [
-            Tag.objects.create(value="django"),
-            Tag.objects.create(value="python"),
-            Tag.objects.create(value="test"),
-            Tag.objects.create(value="app"),
+            Tag.objects.create(value='django'),
+            Tag.objects.create(value='python'),
+            Tag.objects.create(value='test'),
+            Tag.objects.create(value='app'),
         ]
 
-        with open("./handypackages/test_requirements/test_upload_image.jpg", 'rb') as image:
+        with open('./handypackages/test_requirements/test_upload_image.jpg',
+                  'rb') as image:
             test_image = SimpleUploadedFile(
-                "test_upload_image.jpg",
+                'test_upload_image.jpg',
                 image.read(),
-                content_type="image/jpeg"
+                content_type='image/jpeg'
             )
             image = Image(
                 owner=self.user,
                 file=test_image,
-                original_filename="product_image_file",
+                original_filename='product_image_file',
                 name='test_product_image'
             )
             image.save()
@@ -54,18 +55,18 @@ class TestProductModels(TestCase):
     def test_product_model(self):
         self.assertEqual(
             str(self.product),
-            "product test title",
-            "__str__ in product model have an issue!"
+            'product test title',
+            '__str__ in product model have an issue!'
         )
 
         self.assertEqual(
             self.product.__unicode__(),
-            "product test title",
-            "__unicode__ in product model have an issue!"
+            'product test title',
+            '__unicode__ in product model have an issue!'
         )
 
         self.assertEqual(
             set(Tag.objects.all()),
             set(self.product.product_tags),
-            "blog blog_tags method does not work!"
+            'blog blog_tags method does not work!'
         )

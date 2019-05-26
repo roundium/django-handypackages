@@ -28,7 +28,7 @@ class TemplateTagsTests(TestCase):
         os.linesep + '</script>' + os.linesep + r'<script async src="https://www.googletagmanager.com/gtag/js?id=UA-515165812"></script>' + os.linesep +\
         r'<script async src="https://www.google-analytics.com/analytics.js"></script>' + os.linesep
         self.assertEqual(rendered, correct_response,
-                         "google analytic tag does not work!")
+                         'google analytic tag does not work!')
 
     def test_facebook_share_link_creator(self):
         self.assertRaises(
@@ -44,10 +44,10 @@ class TemplateTagsTests(TestCase):
         self.assertEqual(
             rendered,
             'https://www.facebook.com/sharer/sharer.php?u=%s&t=%s' % (
-                urlencode("https://djangoproject.com/"),
-                urlencode("django")
+                urlencode('https://djangoproject.com/'),
+                urlencode('django')
             ),
-            "Facebook share link creator not working!"
+            'Facebook share link creator not working!'
         )
 
     def test_twitter_share_link_creator(self):
@@ -63,10 +63,10 @@ class TemplateTagsTests(TestCase):
         )
         self.assertEqual(
             rendered,
-            "https://twitter.com/share?text=%s&url=%s&hashtags=%s" % (
-                urlencode("django"),
-                urlencode("https://djangoproject.com/"),
-                "django,python,pypy"
+            'https://twitter.com/share?text=%s&url=%s&hashtags=%s' % (
+                urlencode('django'),
+                urlencode('https://djangoproject.com/'),
+                'django,python,pypy'
             ),
-            "Facebook share link creator not working!"
+            'Facebook share link creator not working!'
         )

@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from handypackages.blog.sitemap import BlogSitemap
+from handypackages.blog.sitemaps import BlogSitemap
 
 sitemaps = {
     'blog': BlogSitemap,

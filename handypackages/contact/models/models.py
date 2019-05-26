@@ -8,10 +8,10 @@ class ContactAbstractModel(models.Model):
     if you don't like contact model
     inherite from this abstract models and overwrite it
     """
-    name = models.CharField(verbose_name=_("Name"), max_length=255)
-    email = models.EmailField(verbose_name=_("Email"), max_length=255)
-    phone = PhoneNumberField(verbose_name=_("Phone"), null=False, blank=False)
-    message = models.TextField(verbose_name=_("Message"))
+    name = models.CharField(verbose_name=_('Name'), max_length=255)
+    email = models.EmailField(verbose_name=_('Email'), max_length=255)
+    phone = PhoneNumberField(verbose_name=_('Phone'), null=False, blank=False)
+    message = models.TextField(verbose_name=_('Message'))
     time_send = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Time Send'))
 

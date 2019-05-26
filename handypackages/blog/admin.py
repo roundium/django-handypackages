@@ -8,7 +8,7 @@ class BlogAdminPanel(admin.ModelAdmin):
     filter_horizontal = ('tags', )
     fields = ['title', 'text', 'slug', 'image',
               'tags', 'publish_time', 'create_time']
-    prepopulated_fields = {"slug": ("title",)}
+    prepopulated_fields = {'slug': ('title',)}
     readonly_fields = ['create_time']
 
 

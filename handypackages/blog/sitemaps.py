@@ -28,7 +28,7 @@ class BlogSitemap(Sitemap):
     def __init__(self, url_name=None):
         super(BlogSitemap, self).__init__()
         if not url_name:
-            raise Exception("url_name argument missed for Blog Sitemap")
+            raise Exception('url_name argument missed for Blog Sitemap')
         self.url_name = url_name
 
     def items(self):

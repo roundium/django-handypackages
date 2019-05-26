@@ -37,7 +37,7 @@ class ProductAbstractModel(models.Model):
     tags = models.ManyToManyField(Tag)
 
     create_time = models.DateTimeField(
-        verbose_name=_("Time Create"),
+        verbose_name=_('Time Create'),
         editable=False,
         auto_now_add=True
     )

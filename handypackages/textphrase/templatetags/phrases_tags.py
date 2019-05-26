@@ -19,8 +19,8 @@ def single_text_phrase(context, slug=None, language=None):
     phrases = context.get('text_phrases', None)
     if not phrases:
         raise Exception(
-            "for using single_text_phrase templatetag, "
-            "Please Enable one of the Text Phrase Context Processors"
+            'for using single_text_phrase templatetag, '
+            'Please Enable one of the Text Phrase Context Processors'
         )
     if not language:
         phrase = phrases.filter(slug=slug)
@@ -47,8 +47,8 @@ def multi_text_phrase(context, slug=None, language=None):
     phrases = context.get('text_phrases', None)
     if not phrases:
         raise Exception(
-            "for using single_text_phrase templatetag, "
-            "Please Enable one of the Text Phrase Context Processors"
+            'for using single_text_phrase templatetag, '
+            'Please Enable one of the Text Phrase Context Processors'
         )
     if not language:
         return phrases.filter(slug=slug)

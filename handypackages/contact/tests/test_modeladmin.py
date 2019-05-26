@@ -1,8 +1,9 @@
-from django.test import TestCase
 from django.contrib.admin.sites import AdminSite
+from django.test import TestCase
 
-from handypackages.contact.models import Contact
 from handypackages.contact.admin import ContactAdminPanel
+from handypackages.contact.models import Contact
+
 
 class MockRequest:
     def __init__(self, user=None):
@@ -10,6 +11,7 @@ class MockRequest:
 
 
 request = MockRequest()
+
 
 class ModelAdminTests(TestCase):
     def test_has_add_permission(self):

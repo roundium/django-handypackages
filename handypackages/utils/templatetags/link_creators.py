@@ -1,6 +1,7 @@
 from django import template
 
-from .nodes import FacebookShareLinkCreatorNode, TwitterShareLinkCreatorNode
+from .nodes import (FacebookShareLinkCreatorNode, TelegramShareLinkCreatorNode,
+                    TwitterShareLinkCreatorNode,)
 
 register = template.Library()
 
@@ -41,3 +42,22 @@ def generate_twitter_share_link(parser, token):
             '%r tag requires two argument' % token.contents.split()[0]
         )
     return TwitterShareLinkCreatorNode(text, link, hashtags)
+
+
+@register.tag(name="telegram_share")
+def generate_telegram_share_link(parser, token):
+    """
+    generate share link for telegram
+    example:
+        {% load link_creators %}
+        {% telegram_share "learn django" "https://djangoproject.com/" %}"
+        share in Telegram
+        </a>
+    """
+    try:
+        tag_name, text, link = token.split_contents()
+    except ValueError:
+        raise template.TemplateSyntaxError(
+            '%r tag requires two argument' % token.contents.split()[0]
+        )
+    return TelegramShareLinkCreatorNode(text, link)

@@ -30,3 +30,17 @@ class TwitterShareLinkCreatorNode(template.Node):
             urlencode(self.link),
             self.hashtags
         )
+
+
+class TelegramShareLinkCreatorNode(template.Node):
+    url = 'https://telegram.me/share/url?url=%s&text=%s'
+
+    def __init__(self, text, link):
+        self.text = text[1:-1]
+        self.link = link[1:-1]
+
+    def render(self, context):
+        return self.url % (
+            urlencode(self.link),
+            urlencode(self.text)
+        )

@@ -70,3 +70,24 @@ class TemplateTagsTests(TestCase):
             ),
             'Facebook share link creator not working!'
         )
+
+
+    def test_telegram_share_link_creator(self):
+        self.assertRaises(
+            TemplateSyntaxError,
+            self.render_template,
+            '{% load link_creators %}'
+            '{% telegram_share %}'
+        )
+        rendered = self.render_template(
+            '{% load link_creators %}'
+            '{% telegram_share "django" "https://djangoproject.com/" %}'
+        )
+        self.assertEqual(
+            rendered,
+            'https://telegram.me/share/url?url=%s&text=%s' % (
+                urlencode('https://djangoproject.com/'),
+                urlencode('django'),
+            ),
+            'Telegram share link creator not working!'
+        )

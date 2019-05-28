@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from django.template import Context, Template, TemplateSyntaxError
 from django.template.defaultfilters import urlencode
@@ -71,7 +72,6 @@ class TemplateTagsTests(TestCase):
             'Facebook share link creator not working!'
         )
 
-
     def test_telegram_share_link_creator(self):
         self.assertRaises(
             TemplateSyntaxError,
@@ -90,4 +90,42 @@ class TemplateTagsTests(TestCase):
                 urlencode('django'),
             ),
             'Telegram share link creator not working!'
+        )
+
+    def test_date_time_conv(self):
+        self.assertRaises(
+            TemplateSyntaxError,
+            self.render_template,
+            '{% load date_time_conv %}'
+            '{{ "datetime"|datetime_conv:"%y/%m/%d" }}',
+        )
+
+        rendered = self.render_template(
+            '{% load date_time_conv %}'
+            '{{ datetime|datetime_conv:"%y/%m/%d" }}',
+            {"datetime": datetime.datetime(2019, 5, 28)}
+        )
+        self.assertEqual(
+            rendered,
+            "1398/3/7"
+        )
+
+        rendered = self.render_template(
+            '{% load date_time_conv %}'
+            '{{ datetime|datetime_conv:"%y/%m/%d %h:%M:%s" }}',
+            {"datetime": datetime.datetime(2019, 5, 28, 1, 10, 33)}
+        )
+        self.assertEqual(
+            rendered,
+            "1398/3/7 1:10:33"
+        )
+
+        rendered = self.render_template(
+            '{% load date_time_conv %}'
+            '{{ datetime|datetime_conv:"%y %n %d" }}',
+            {"datetime": datetime.datetime(2019, 5, 28, 1, 10, 33)}
+        )
+        self.assertEqual(
+            rendered,
+            "1398 خرداد 7"
         )

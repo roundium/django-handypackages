@@ -25,13 +25,16 @@ class TemplateTagsTests(TestCase):
         return Template(string).render(context)
 
     def test_text_phrases_tags(self):
-        self.assertRaises(
-            Exception,
-            self.render_template,
-            string='{% load phrases_tags %}'
+        phrases = TextPhrase.objects.none()
+        rendered = self.render_template(
+            '{% load phrases_tags %}'
             '{% single_text_phrase "facebook_page" as facebook_page %}'
-            '<a href="{{ facebook_page }}">Facebook Page<a/>'
+            '<a href="{{ facebook_page.text }}">Facebook Page<a/>',
+            {'text_phrases': phrases}
         )
+        answer = '<a href="">Facebook Page<a/>'
+        self.assertEqual(rendered, answer,
+                         'single_text_phrase templatetag does not work')
 
         phrases = TextPhrase.objects.all()
         rendered = self.render_template(
@@ -81,12 +84,14 @@ class TemplateTagsTests(TestCase):
         self.assertEqual(rendered, answer,
                          'multi_text_phrase templatetag does not work')
 
-        self.assertRaises(
-            Exception,
-            self.render_template,
-            string='{% load phrases_tags %}'
+        phrases = TextPhrase.objects.none()
+        rendered = self.render_template(
+            '{% load phrases_tags %}'
             '{% multi_text_phrase "language" "fr" as languages %}'
             '{% for lang in languages %}'
             '<p>{{ lang.text }}</p>'
-            '{% endfor %}'
+            '{% endfor %}',
+            {'text_phrases': phrases}
         )
+        self.assertEqual(rendered, '',
+                         'multi_text_phrase templatetag does not work')

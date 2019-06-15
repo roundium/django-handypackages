@@ -26,5 +26,12 @@ class TagAbstractMode(models.Model):
         verbose_name_plural = _('Tags')
 
 
-class Tag(TagAbstractMode):
+class TagModel(TagAbstractMode):
     """ Tags will use with product app """
+
+
+class Tag(TagModel):
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

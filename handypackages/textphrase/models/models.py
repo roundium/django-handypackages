@@ -48,7 +48,7 @@ class TextPhraseAbstractModel(models.Model):
         verbose_name_plural = _('Text Phrases')
 
 
-class TextPhrase(TextPhraseAbstractModel):
+class TextPhraseModel(TextPhraseAbstractModel):
     """
     this model will implement TextPhraseAbstractModel.
     if you don't like style or fields you can import
@@ -66,3 +66,9 @@ class TextPhrase(TextPhraseAbstractModel):
         AboutUsFr    : aboutus      : AboutUs
         facebook url : facebook_url : https://facebook.com
     """
+
+class TextPhrase(TextPhraseModel):
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

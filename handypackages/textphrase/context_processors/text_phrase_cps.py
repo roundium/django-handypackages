@@ -36,7 +36,8 @@ def text_phrase_language_cp(request):
             ...
         ]
     """
-    text_phrases = TextPhrase.objects.filter(language=request.LANGUAGE_CODE)
+    text_phrases = TextPhrase.objects.filter(
+        language__in=["global", request.LANGUAGE_CODE])
     return {
         TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME: text_phrases
     }

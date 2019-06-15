@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
-from handypackages.tag.models import Tag
+from handypackages.tag.models import TagModel
 
 
 class ProductAbstractModel(models.Model):
@@ -34,7 +34,7 @@ class ProductAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Slug')
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(TagModel, blank=True)
 
     create_time = models.DateTimeField(
         verbose_name=_('Time Create'),
@@ -60,9 +60,16 @@ class ProductAbstractModel(models.Model):
         verbose_name_plural = _('Products')
 
 
-class Product(ProductAbstractModel):
+class ProductModel(ProductAbstractModel):
     """
     Product Model
     if you don't like product model
     inherite ProductAbstractModel model and overwrite it
     """
+
+
+class Product(ProductModel):
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

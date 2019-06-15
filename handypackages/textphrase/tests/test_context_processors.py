@@ -40,5 +40,5 @@ class ContextProcessorsTests(TestCase):
         response = self.client.get(reverse('admin:index'), follow=True)
         self.assertEqual(
             set(response.context[TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME]),
-            set(TextPhrase.objects.filter(language='fr')),
+            set(TextPhrase.objects.filter(language__in=['fr', 'global'])),
             'text_phrase_language_cp context processor does not work')

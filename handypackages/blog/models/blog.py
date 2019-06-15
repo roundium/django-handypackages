@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
-from handypackages.tag.models import Tag
+from handypackages.tag.models import TagModel
 
 
 class PublishedBlogManager(Manager):
@@ -45,7 +45,7 @@ class BlogAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Slug')
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(TagModel, blank=True)
     disable = models.BooleanField(
         default=False,
         verbose_name=_('Disable'),
@@ -77,5 +77,12 @@ class BlogAbstractModel(models.Model):
         verbose_name_plural = _('Blogs')
 
 
-class Blog(BlogAbstractModel):
-    """ Blog model """
+class BlogModel(BlogAbstractModel):
+    """Blog model."""
+
+
+class Blog(BlogModel):
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 
-from handypackages.tag.models import Tag
+from handypackages.tag.models import TagModel
 
 
 class GalleryAbstractModel(models.Model):
@@ -18,7 +18,7 @@ class GalleryAbstractModel(models.Model):
     text = RichTextUploadingField(
         verbose_name=_('Text')
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(TagModel, blank=True)
     create_time = models.DateTimeField(
         verbose_name=_('Time Create'),
         editable=False,
@@ -42,9 +42,16 @@ class GalleryAbstractModel(models.Model):
         verbose_name_plural = _('Galleries')
 
 
-class Gallery(GalleryAbstractModel):
+class GalleryModel(GalleryAbstractModel):
     """
     Gallery model.
     if you don't like this model, inherite GalleryAbstractModel
     and overwite it
     """
+
+
+class Gallery(GalleryModel):
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

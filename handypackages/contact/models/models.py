@@ -27,5 +27,13 @@ class ContactAbstractModel(models.Model):
         verbose_name_plural = _('Contacts')
 
 
-class Contact(ContactAbstractModel):
-    """ Contact Model """
+class ContactModel(ContactAbstractModel):
+    """Contact Model"""
+
+
+class Contact(ContactModel):
+    """Contact Model"""
+    class Meta:
+        proxy = True
+        app_label = 'handypackages'
+        auto_created = True

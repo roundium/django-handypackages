@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from ..models import Subscribe
+from .models import Subscribe
 
 
 class TestModels(TestCase):

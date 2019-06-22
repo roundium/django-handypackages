@@ -2,7 +2,6 @@ import cgi
 import math
 import string
 
-
 Weekdays = [
     "Sunday",
     "Monday",
@@ -10,7 +9,7 @@ Weekdays = [
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
 ]
 
 
@@ -19,9 +18,9 @@ def mod(a, b):
 
 
 def leap_gregorian(year):
-    return (
-        (year % 4) == 0) and (not (
-            ((year % 100) == 0) and ((year % 400) != 0)))
+    return ((year % 4) == 0) and (
+        not (((year % 100) == 0) and ((year % 400) != 0))
+    )
 
 
 GREGORIAN_EPOCH = 1721425.5
@@ -58,7 +57,8 @@ def jd_to_gregorian(jd):
     yearday = wjd - gregorian_to_jd(year, 1, 1)
 
     leapadj = 0 if wjd < gregorian_to_jd(
-        year, 3, 1) else 1 if leap_gregorian(year) else 2
+        year, 3, 1,
+    ) else 1 if leap_gregorian(year) else 2
 
     month = math.floor((((yearday + leapadj) * 12) + 373) / 367)
     day = (wjd - gregorian_to_jd(year, month, 1)) + 1
@@ -91,16 +91,17 @@ def jd_to_persian(jd):
     else:
         aux1 = math.floor(cyear / 366)
         aux2 = mod(cyear, 366)
-        ycycle = math.floor(
-            ((2134 * aux1) + (2816 * aux2) + 2815) / 1028522) + aux1 + 1
+        ycycle = math.floor(((2134 * aux1) +
+                             (2816 * aux2) + 2815) / 1028522) + aux1 + 1
 
     year = ycycle + (2820 * cycle) + 474
     if (year <= 0):
         year -= 1
 
     yday = (jd - persian_to_jd(year, 1, 1)) + 1
-    month = math.ceil(yday / 31) if (yday <=
-                                     186) else math.ceil((yday - 6) / 30)
+    month = math.ceil(yday / 31) if (yday <= 186) else math.ceil(
+        (yday - 6) / 30,
+    )
     day = (jd - persian_to_jd(year, month, 1)) + 1
     return map(str, [year, month, int(day)])
 
@@ -123,30 +124,19 @@ replaces = {
 }
 
 persian_month_names = [
-    "persian_month_names",
-    "فروردین",
-    "ادریبهشت",
-    "خرداد",
-    "تیر",
-    "مرداد",
-    "شهریور",
-    "مهر",
-    "ابان",
-    "اذر",
-    "دی",
-    "بهمن",
-    "اسفند"
+    "persian_month_names", "فروردین", "ادریبهشت", "خرداد", "تیر", "مرداد",
+    "شهریور", "مهر", "ابان", "اذر", "دی", "بهمن", "اسفند",
 ]
 
 
-def _do_replace(format):
+def _do_replace(string_format):
     for k, v in replaces.items():
-        format = format.replace(k, v)
-    return format
+        string_format = string_format.replace(k, v)
+    return string_format
 
 
-def fmt(date_time, format="%y/%m/%d %h:%M:%s"):
-    format = _do_replace(format)
+def fmt(date_time, string_format="%y/%m/%d %h:%M:%s"):
+    string_format = _do_replace(string_format)
     jd = gregorian_to_jd(date_time.year, date_time.month, date_time.day)
     persian_date = list(jd_to_persian(jd))
     date_dict = {
@@ -158,4 +148,4 @@ def fmt(date_time, format="%y/%m/%d %h:%M:%s"):
         "minute": str(date_time.minute),
         "second": str(date_time.second),
     }
-    return _PersianDateTimeFormatter().format(format, **date_dict)
+    return _PersianDateTimeFormatter().format(string_format, **date_dict)

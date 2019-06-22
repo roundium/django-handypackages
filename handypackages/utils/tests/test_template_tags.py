@@ -97,12 +97,12 @@ class TemplateTagsTests(TestCase):
             TemplateSyntaxError,
             self.render_template,
             '{% load date_time_conv %}'
-            '{{ "datetime"|datetime_conv:"%y/%m/%d" }}',
+            '{{ "datetime"|persian_datetime:"%y/%m/%d" }}',
         )
 
         rendered = self.render_template(
             '{% load date_time_conv %}'
-            '{{ datetime|datetime_conv:"%y/%m/%d" }}',
+            '{{ datetime|persian_datetime:"%y/%m/%d" }}',
             {"datetime": datetime.datetime(2019, 5, 28)}
         )
         self.assertEqual(
@@ -112,7 +112,7 @@ class TemplateTagsTests(TestCase):
 
         rendered = self.render_template(
             '{% load date_time_conv %}'
-            '{{ datetime|datetime_conv:"%y/%m/%d %h:%M:%s" }}',
+            '{{ datetime|persian_datetime:"%y/%m/%d %h:%M:%s" }}',
             {"datetime": datetime.datetime(2019, 5, 28, 1, 10, 33)}
         )
         self.assertEqual(
@@ -122,7 +122,7 @@ class TemplateTagsTests(TestCase):
 
         rendered = self.render_template(
             '{% load date_time_conv %}'
-            '{{ datetime|datetime_conv:"%y %n %d" }}',
+            '{{ datetime|persian_datetime:"%y %n %d" }}',
             {"datetime": datetime.datetime(2019, 5, 28, 1, 10, 33)}
         )
         self.assertEqual(

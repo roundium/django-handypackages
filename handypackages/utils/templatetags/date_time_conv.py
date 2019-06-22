@@ -7,10 +7,10 @@ from handypackages.datetime_conv import fmt
 register = template.Library()
 
 
-@register.filter()
-def datetime_conv(date_time, format="%y/%m/%d %h:%M:%s"):
+@register.filter(name="persian_datetime")
+def datetime_conv(date_time, string_format="%y/%m/%d %h:%M:%s"):
     """
-    convert datetime to persian datetime
+    Convert datetime to persian datetime
     example(datetime=datetime.datetime(2019, 5, 28, 1, 10, 33)):
         {% load date_time_conv %}
         {{ datetime|datetime_conv:"%y/%m/%d %h:%M:%s" }}
@@ -18,6 +18,6 @@ def datetime_conv(date_time, format="%y/%m/%d %h:%M:%s"):
     """
     if not isinstance(date_time, datetime):
         raise template.TemplateSyntaxError(
-            "datetime_conv first argument must be datetime instance"
+            "datetime_conv first argument must be datetime instance.",
         )
-    return fmt(date_time, format)
+    return fmt(date_time, string_format)

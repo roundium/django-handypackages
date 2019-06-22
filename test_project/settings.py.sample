@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # Local App
     'handypackages',
     'handypackages.utils',
+    'handypackages.subscribe',
     'handypackages.textphrase',
     'handypackages.tag',
     'handypackages.blog',

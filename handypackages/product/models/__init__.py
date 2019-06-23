@@ -1,1 +1,1 @@
-from .product import Product, ProductAbstractModel
+from .product import Product, ProductAbstractModel, ProductModel

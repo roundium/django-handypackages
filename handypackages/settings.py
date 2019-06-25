@@ -9,6 +9,9 @@ TEXT_PHRASE_SIMPLE_CONTEXT_OBJECT_NAME = getattr(
 TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME = getattr(
     settings, 'TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME', 'text_phrases_lang')
 
+PASS_DATA_CONTEXT_PROCESSOR = getattr(
+    settings, 'PASS_DATA_CONTEXT_PROCESSOR', {})
+
 
 def _get_languages():
     """

@@ -65,10 +65,10 @@ class TemplateTagsTests(TestCase):
             '{% endfor %}',
             {'text_phrases': phrases}
         )
-        answer = ('<p>welcome</p>'
-                  '<p>bienvenu</p>'
-                  '<p>salut</p>'
-                  )
+        answer = ""
+        text_phrases = TextPhrase.objects.filter(slug='language')
+        for phrase in text_phrases:
+            answer = answer + "<p>%s</p>" % phrase.text
         self.assertEqual(rendered, answer,
                          'multi_text_phrase templatetag does not work')
 

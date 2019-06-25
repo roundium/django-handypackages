@@ -130,7 +130,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 "handypackages.textphrase.context_processors.text_phrase_cps.text_phrase_simple_cp",
-                "handypackages.textphrase.context_processors.text_phrase_cps.text_phrase_language_cp"
+                "handypackages.textphrase.context_processors.text_phrase_cps.text_phrase_language_cp",
+                "handypackages.utils.context_processors.pass_data",
             ],
         },
     },
@@ -143,6 +144,11 @@ LANGUAGES = (
     ('fr', 'French'),
     ('fa', 'Persian'),
 )
+
+PASS_DATA_CONTEXT_PROCESSOR = {
+    'default_language': LANGUAGE_CODE
+}
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

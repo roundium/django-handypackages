@@ -18,6 +18,12 @@ class GalleryAbstractModel(models.Model):
     text = RichTextUploadingField(
         verbose_name=_('Text')
     )
+    language = models.CharField(
+        default="global",
+        max_length=6,
+        db_index=True,
+        verbose_name=_('Language'),
+    )
     tags = models.ManyToManyField(TagModel, blank=True)
     create_time = models.DateTimeField(
         verbose_name=_('Time Create'),

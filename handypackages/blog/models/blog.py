@@ -46,6 +46,12 @@ class BlogAbstractModel(models.Model):
         verbose_name=_('Slug')
     )
     tags = models.ManyToManyField(TagModel, blank=True)
+    language = models.CharField(
+        default="global",
+        max_length=6,
+        db_index=True,
+        verbose_name=_('Language'),
+    )
     disable = models.BooleanField(
         default=False,
         verbose_name=_('Disable'),

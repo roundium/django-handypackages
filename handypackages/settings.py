@@ -12,6 +12,8 @@ TEXT_PHRASE_LANG_CONTEXT_OBJECT_NAME = getattr(
 PASS_DATA_CONTEXT_PROCESSOR = getattr(
     settings, 'PASS_DATA_CONTEXT_PROCESSOR', {})
 
+ALL_LANGUAGES = getattr(settings, 'LANGUAGES', [])
+
 
 def _get_languages():
     """
@@ -21,7 +23,7 @@ def _get_languages():
     language_list = [
         ('global', 'Global')
     ]
-    for item in getattr(settings, 'LANGUAGES', []):
+    for item in ALL_LANGUAGES:
         language_list.append(item)
     return language_list
 

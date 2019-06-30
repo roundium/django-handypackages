@@ -35,7 +35,12 @@ class ProductAbstractModel(models.Model):
         verbose_name=_('Slug')
     )
     tags = models.ManyToManyField(TagModel, blank=True)
-
+    language = models.CharField(
+        default="global",
+        max_length=6,
+        db_index=True,
+        verbose_name=_('Language'),
+    )
     create_time = models.DateTimeField(
         verbose_name=_('Time Create'),
         editable=False,

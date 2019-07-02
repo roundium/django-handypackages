@@ -80,7 +80,7 @@ class TemplateTagsTests(TestCase):
             '{% endfor %}',
             {'text_phrases': phrases}
         )
-        answer = ('<p>bienvenu</p><p>salut</p>')
+        answer = ('<p>salut</p><p>bienvenu</p>')
         self.assertEqual(rendered, answer,
                          'multi_text_phrase templatetag does not work')
 

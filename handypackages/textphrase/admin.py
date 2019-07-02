@@ -5,9 +5,10 @@ from .models import TextPhrase
 
 
 class TextPhraseAdminPanel(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'text']
-    search_fields = ['title', 'slug', 'text']
-    prepopulated_fields = {'slug': ('title',), }
+    list_display = ['title', 'slug', 'text', 'language']
+    search_fields = ['title', 'slug', 'text', 'language']
+    prepopulated_fields = {'slug': ('title',)}
+    list_filter = ['language']
     form = TextPhraseForm
 
 

@@ -19,29 +19,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:7
-msgid "Text Phrase App"
-msgstr "عبارات متنی"
+msgid "Gallery App"
+msgstr "گالری"
 
-#: models/models.py:15
+#: models.py:12
 msgid "Title"
 msgstr "عنوان"
 
-#: models/models.py:21
-msgid "Slug"
-msgstr "اسلاگ"
+#: models.py:15
+msgid "Image"
+msgstr "عکس"
 
-#: models/models.py:24
+#: models.py:19
 msgid "Text"
 msgstr "متن"
 
-#: models/models.py:30
+#: models.py:25
 msgid "Language"
 msgstr "زبان"
 
-#: models/models.py:47
-msgid "Text Phrase"
-msgstr "عبارت متنی"
+#: models.py:29
+msgid "Time Create"
+msgstr "زمان ایجاد"
 
-#: models/models.py:48
-msgid "Text Phrases"
-msgstr "عبارات متنی"
+#: models.py:47
+msgid "Gallery"
+msgstr "گالری"
+
+#: models.py:48
+msgid "Galleries"
+msgstr "گالری"

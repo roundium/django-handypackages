@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-06 16:04+0430\n"
+"POT-Creation-Date: 2019-07-06 16:03+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>"
 "Language-Team: Persian\n"
@@ -19,29 +19,45 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:7
-msgid "Text Phrase App"
-msgstr "عبارات متنی"
+msgid "Product App"
+msgstr "محصولات"
 
-#: models/models.py:15
+#: models/product.py:16
 msgid "Title"
 msgstr "عنوان"
 
-#: models/models.py:21
-msgid "Slug"
-msgstr "اسلاگ"
+#: models/product.py:19
+msgid "Image"
+msgstr "عکس"
 
-#: models/models.py:24
+#: models/product.py:23
 msgid "Text"
 msgstr "متن"
 
-#: models/models.py:30
+#: models/product.py:28
+msgid "235,000 T"
+msgstr "مثال: 235000"
+
+#: models/product.py:29
+msgid "Price"
+msgstr "قیمت"
+
+#: models/product.py:35
+msgid "Slug"
+msgstr "اسلاگ"
+
+#: models/product.py:42
 msgid "Language"
 msgstr "زبان"
 
-#: models/models.py:47
-msgid "Text Phrase"
-msgstr "عبارت متنی"
+#: models/product.py:45
+msgid "Time Create"
+msgstr "زمان ایجاد"
 
-#: models/models.py:48
-msgid "Text Phrases"
-msgstr "عبارات متنی"
+#: models/product.py:64
+msgid "Product"
+msgstr "محصول"
+
+#: models/product.py:65
+msgid "Products"
+msgstr "محصولات"

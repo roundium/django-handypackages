@@ -6,12 +6,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.6.0"
+"Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-06 16:04+0430\n"
+"POT-Creation-Date: 2019-07-07 13:45+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
-"Last-Translator: mohammad katoozi <k2527806@gmail.com>"
-"Language-Team: Persian\n"
+"Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
+"Persian\n"
 "Language: Persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,10 +30,10 @@ msgstr "مقدار"
 msgid "Time of Create"
 msgstr "زمان ایجاد"
 
-#: models.py:25
+#: models.py:25 models.py:38
 msgid "Tag"
 msgstr "برچسب"
 
-#: models.py:26
+#: models.py:26 models.py:39
 msgid "Tags"
 msgstr "برچسب‌ها"

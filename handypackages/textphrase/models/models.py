@@ -72,3 +72,6 @@ class TextPhrase(TextPhraseModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        ordering = ('slug', '-id')
+        verbose_name = _('Text Phrase')
+        verbose_name_plural = _('Text Phrases')

@@ -6,19 +6,19 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.6.0"
+"Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-06 16:03+0430\n"
+"POT-Creation-Date: 2019-07-07 13:45+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
-"Last-Translator: mohammad katoozi <k2527806@gmail.com>"
-"Language-Team: Persian\n"
+"Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
+"Persian\n"
 "Language: Persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:7 models/models.py:26
+#: apps.py:7 models/models.py:26 models/models.py:40
 msgid "Contact"
 msgstr "تماس با‌ما"
 
@@ -42,6 +42,6 @@ msgstr "پیام"
 msgid "Time Send"
 msgstr "زمان ارسال"
 
-#: models/models.py:27
+#: models/models.py:27 models/models.py:41
 msgid "Contacts"
 msgstr "تماس با‌ما"

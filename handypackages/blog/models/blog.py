@@ -92,3 +92,6 @@ class Blog(BlogModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        ordering = ('-publish_time', )
+        verbose_name = _('Blog')
+        verbose_name_plural = _('Blogs')

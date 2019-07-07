@@ -6,12 +6,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.6.0"
+"Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-06 16:03+0430\n"
+"POT-Creation-Date: 2019-07-07 14:07+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
-"Last-Translator: mohammad katoozi <k2527806@gmail.com>"
-"Language-Team: Persian\n"
+"Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
+"Persian\n"
 "Language: Persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,10 +54,10 @@ msgstr "زبان"
 msgid "Time Create"
 msgstr "زمان ایجاد"
 
-#: models/product.py:64
+#: models/product.py:64 models/product.py:82
 msgid "Product"
 msgstr "محصول"
 
-#: models/product.py:65
+#: models/product.py:65 models/product.py:83
 msgid "Products"
 msgstr "محصولات"

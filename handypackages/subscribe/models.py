@@ -73,3 +73,5 @@ class Subscribe(SubscribeModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        verbose_name = _('Subscribe Email')
+        verbose_name_plural = _('Subscribe Emails')

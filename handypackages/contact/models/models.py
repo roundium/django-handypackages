@@ -37,3 +37,5 @@ class Contact(ContactModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        verbose_name = _('Contact')
+        verbose_name_plural = _('Contacts')

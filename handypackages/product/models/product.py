@@ -78,3 +78,6 @@ class Product(ProductModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        ordering = ('-create_time', )
+        verbose_name = _('Product')
+        verbose_name_plural = _('Products')

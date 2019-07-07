@@ -1,5 +1,14 @@
 include LICENSE
 include README.md
+recursive-include handypackages/blog/locale *
+recursive-include handypackages/contact/locale *
+recursive-include handypackages/gallery/locale *
+recursive-include handypackages/product/locale *
+recursive-include handypackages/subscribe/locale *
+recursive-include handypackages/tag/locale *
+recursive-include handypackages/textphrase/locale *
+recursive-include handypackages/utils/locale *
+recursive-include handypackages/utils/templates *
 recursive-exclude .*
 include AUTHORS
 include Gruntfile.js

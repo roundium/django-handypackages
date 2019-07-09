@@ -23,10 +23,9 @@ class ProductAbstractModel(models.Model):
         verbose_name=_('Text')
     )
 
-    price = models.CharField(
-        max_length=255,
+    price = models.IntegerField(
         help_text=_('235,000 T'),
-        verbose_name=_('Price')
+        verbose_name=_('Price'),
     )
     slug = models.SlugField(
         unique=True,
@@ -34,7 +33,7 @@ class ProductAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Slug')
     )
-    tags = models.ManyToManyField(TagModel, blank=True)
+    tags = models.ManyToManyField(TagModel, blank=True, verbose_name=_("Tags"))
     language = models.CharField(
         default="global",
         max_length=6,

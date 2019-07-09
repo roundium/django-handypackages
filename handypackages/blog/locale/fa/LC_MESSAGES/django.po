@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 13:44+0430\n"
+"POT-Creation-Date: 2019-07-09 10:47+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -45,6 +45,10 @@ msgstr "زمان انتشار"
 #: models/blog.py:46
 msgid "Slug"
 msgstr "اسلاگ"
+
+#: models/blog.py:48
+msgid "Tags"
+msgstr "برچسب‌ها"
 
 #: models/blog.py:53
 msgid "Language"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 13:45+0430\n"
+"POT-Creation-Date: 2019-07-09 10:59+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -22,6 +22,10 @@ msgstr ""
 msgid "Gallery App"
 msgstr "گالری"
 
+#: forms.py:14 models.py:25
+msgid "Language"
+msgstr "زبان"
+
 #: models.py:12
 msgid "Title"
 msgstr "عنوان"
@@ -34,9 +38,9 @@ msgstr "عکس"
 msgid "Text"
 msgstr "متن"
 
-#: models.py:25
-msgid "Language"
-msgstr "زبان"
+#: models.py:27
+msgid "Tags"
+msgstr "برچسب‌ها"
 
 #: models.py:29
 msgid "Time Create"

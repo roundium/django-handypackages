@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 14:07+0430\n"
+"POT-Creation-Date: 2019-07-09 10:58+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -21,6 +21,14 @@ msgstr ""
 #: apps.py:7
 msgid "Product App"
 msgstr "محصولات"
+
+#: forms.py:14 models/product.py:42
+msgid "Language"
+msgstr "زبان"
+
+#: forms.py:21 models/product.py:37
+msgid "Tags"
+msgstr "برچسب‌ها"
 
 #: models/product.py:16
 msgid "Title"
@@ -36,19 +44,15 @@ msgstr "متن"
 
 #: models/product.py:28
 msgid "235,000 T"
-msgstr "مثال: 235000"
+msgstr "مثال: 235000. واحد پول تومان میباشد. از وارد کردن واحد پول خودداری کنید."
 
 #: models/product.py:29
 msgid "Price"
-msgstr "قیمت"
+msgstr "قیمت(تومان)"
 
 #: models/product.py:35
 msgid "Slug"
 msgstr "اسلاگ"
-
-#: models/product.py:42
-msgid "Language"
-msgstr "زبان"
 
 #: models/product.py:45
 msgid "Time Create"

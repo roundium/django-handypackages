@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 14:02+0430\n"
+"POT-Creation-Date: 2019-07-09 10:55+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -32,8 +32,8 @@ msgstr "زمان درخواست اشتراک"
 
 #: models.py:23 models.py:76
 msgid "Subscribe Email"
-msgstr "خبرنامه"
+msgstr "عضو خبرنامه"
 
 #: models.py:24 models.py:77
 msgid "Subscribe Emails"
-msgstr "خبرنامه"
+msgstr "اعضای خبرنامه"

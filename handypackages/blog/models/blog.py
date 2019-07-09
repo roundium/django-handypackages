@@ -45,7 +45,7 @@ class BlogAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Slug')
     )
-    tags = models.ManyToManyField(TagModel, blank=True)
+    tags = models.ManyToManyField(TagModel, blank=True, verbose_name=_("Tags"))
     language = models.CharField(
         default="global",
         max_length=6,

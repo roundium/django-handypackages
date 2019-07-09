@@ -1,14 +1,26 @@
+import datetime
 import tempfile
 
 from django.conf import settings
+from django.contrib.admin.sites import AdminSite
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 from filer.models import Image
 
+from handypackages.datetime_conv import fmt
 from handypackages.tag.models import Tag
 
+from .admin import ProductAdminPanel
 from .models import Product
+
+
+class MockRequest:
+    def __init__(self, user=None):
+        self.user = user
+
+
+request = MockRequest()
 
 
 class TestProductModels(TestCase):
@@ -46,7 +58,7 @@ class TestProductModels(TestCase):
             text='product test',
             slug='product-test-title',
             image=image,
-            price="25000 T"
+            price=250000
         )
         product.save()
         product.tags.add(*self.tags)
@@ -69,4 +81,26 @@ class TestProductModels(TestCase):
             set(Tag.objects.all()),
             set(self.product.product_tags),
             'blog blog_tags method does not work!'
+        )
+
+
+class ModelAdminTests(TestCase):
+    def test_convert_create_time_to_persian(self):
+        """
+        has_add_permission returns True for users who can add objects and
+        False for users who can't.
+        """
+        ma = ProductAdminPanel(Product, AdminSite())
+        product = Product()
+        product.language = 'en'
+        now = datetime.datetime.now()
+        product.create_time = now
+        self.assertEqual(ma.convert_create_time_to_persian(product), str(now))
+
+        product.language = 'fa'
+        now = datetime.datetime.now()
+        product.create_time = now
+        self.assertEqual(
+            ma.convert_create_time_to_persian(product),
+            fmt(now, "%d %n %y ساعت %h:%M")
         )

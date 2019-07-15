@@ -24,7 +24,7 @@ class GalleryAbstractModel(models.Model):
         db_index=True,
         verbose_name=_('Language'),
     )
-    tags = models.ManyToManyField(TagModel, blank=True)
+    tags = models.ManyToManyField(TagModel, blank=True, verbose_name=_("Tags"))
     create_time = models.DateTimeField(
         verbose_name=_('Time Create'),
         editable=False,
@@ -61,3 +61,5 @@ class Gallery(GalleryModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        verbose_name = _('Gallery')
+        verbose_name_plural = _('Galleries')

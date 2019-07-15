@@ -35,3 +35,5 @@ class Tag(TagModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        verbose_name = _('Tag')
+        verbose_name_plural = _('Tags')

@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-09 10:58+0430\n"
+"PO-Revision-Date: 2019-07-07 11:40+4:30\n"
+"Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
+"Persian\n"
+"Language: Persian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: apps.py:7
+msgid "Product App"
+msgstr "محصولات"
+
+#: forms.py:14 models/product.py:42
+msgid "Language"
+msgstr "زبان"
+
+#: forms.py:21 models/product.py:37
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+#: models/product.py:16
+msgid "Title"
+msgstr "عنوان"
+
+#: models/product.py:19
+msgid "Image"
+msgstr "عکس"
+
+#: models/product.py:23
+msgid "Text"
+msgstr "متن"
+
+#: models/product.py:28
+msgid "235,000 T"
+msgstr "مثال: 235000. واحد پول تومان میباشد. از وارد کردن واحد پول خودداری کنید."
+
+#: models/product.py:29
+msgid "Price"
+msgstr "قیمت(تومان)"
+
+#: models/product.py:35
+msgid "Slug"
+msgstr "اسلاگ"
+
+#: models/product.py:45
+msgid "Time Create"
+msgstr "زمان ایجاد"
+
+#: models/product.py:64 models/product.py:82
+msgid "Product"
+msgstr "محصول"
+
+#: models/product.py:65 models/product.py:83
+msgid "Products"
+msgstr "محصولات"

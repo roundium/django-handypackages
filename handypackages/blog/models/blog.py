@@ -45,7 +45,7 @@ class BlogAbstractModel(models.Model):
         max_length=255,
         verbose_name=_('Slug')
     )
-    tags = models.ManyToManyField(TagModel, blank=True)
+    tags = models.ManyToManyField(TagModel, blank=True, verbose_name=_("Tags"))
     language = models.CharField(
         default="global",
         max_length=6,
@@ -92,3 +92,6 @@ class Blog(BlogModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        ordering = ('-publish_time', )
+        verbose_name = _('Blog')
+        verbose_name_plural = _('Blogs')

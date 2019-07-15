@@ -42,7 +42,7 @@ class TextPhraseAbstractModel(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ('slug',)
+        ordering = ('slug', '-id')
         unique_together = (('slug', 'language', 'title'),)
         verbose_name = _('Text Phrase')
         verbose_name_plural = _('Text Phrases')
@@ -72,3 +72,6 @@ class TextPhrase(TextPhraseModel):
         proxy = True
         app_label = 'handypackages'
         auto_created = True
+        ordering = ('slug', '-id')
+        verbose_name = _('Text Phrase')
+        verbose_name_plural = _('Text Phrases')

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 13:46+0430\n"
+"POT-Creation-Date: 2019-07-07 13:45+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -18,30 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:7
-msgid "Text Phrase App"
-msgstr "عبارات متنی"
+#: apps.py:7 models/models.py:26 models/models.py:40
+msgid "Contact"
+msgstr "تماس با‌ما"
 
-#: models/models.py:15
-msgid "Title"
-msgstr "عنوان"
+#: models/models.py:11
+msgid "Name"
+msgstr "نام"
 
-#: models/models.py:21
-msgid "Slug"
-msgstr "اسلاگ"
+#: models/models.py:12
+msgid "Email"
+msgstr "ایمیل"
 
-#: models/models.py:24
-msgid "Text"
-msgstr "متن"
+#: models/models.py:13
+msgid "Phone"
+msgstr "شماره تلفن"
 
-#: models/models.py:30
-msgid "Language"
-msgstr "زبان"
+#: models/models.py:14
+msgid "Message"
+msgstr "پیام"
 
-#: models/models.py:47 models/models.py:76
-msgid "Text Phrase"
-msgstr "عبارت متنی"
+#: models/models.py:16
+msgid "Time Send"
+msgstr "زمان ارسال"
 
-#: models/models.py:48 models/models.py:77
-msgid "Text Phrases"
-msgstr "عبارات متنی"
+#: models/models.py:27 models/models.py:41
+msgid "Contacts"
+msgstr "تماس با‌ما"

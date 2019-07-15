@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 13:46+0430\n"
+"POT-Creation-Date: 2019-07-07 13:45+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -19,29 +19,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:7
-msgid "Text Phrase App"
-msgstr "عبارات متنی"
+msgid "Tag App"
+msgstr "برچسب"
 
-#: models/models.py:15
-msgid "Title"
-msgstr "عنوان"
+#: models.py:7
+msgid "Value"
+msgstr "مقدار"
 
-#: models/models.py:21
-msgid "Slug"
-msgstr "اسلاگ"
+#: models.py:14
+msgid "Time of Create"
+msgstr "زمان ایجاد"
 
-#: models/models.py:24
-msgid "Text"
-msgstr "متن"
+#: models.py:25 models.py:38
+msgid "Tag"
+msgstr "برچسب"
 
-#: models/models.py:30
-msgid "Language"
-msgstr "زبان"
-
-#: models/models.py:47 models/models.py:76
-msgid "Text Phrase"
-msgstr "عبارت متنی"
-
-#: models/models.py:48 models/models.py:77
-msgid "Text Phrases"
-msgstr "عبارات متنی"
+#: models.py:26 models.py:39
+msgid "Tags"
+msgstr "برچسب‌ها"

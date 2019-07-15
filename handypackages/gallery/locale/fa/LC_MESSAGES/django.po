@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.6.0Report-Msgid-Bugs-To: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-07 13:46+0430\n"
+"POT-Creation-Date: 2019-07-09 10:59+0430\n"
 "PO-Revision-Date: 2019-07-07 11:40+4:30\n"
 "Last-Translator: mohammad katoozi <k2527806@gmail.com>Language-Team: "
 "Persian\n"
@@ -19,29 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:7
-msgid "Text Phrase App"
-msgstr "عبارات متنی"
+msgid "Gallery App"
+msgstr "گالری"
 
-#: models/models.py:15
-msgid "Title"
-msgstr "عنوان"
-
-#: models/models.py:21
-msgid "Slug"
-msgstr "اسلاگ"
-
-#: models/models.py:24
-msgid "Text"
-msgstr "متن"
-
-#: models/models.py:30
+#: forms.py:14 models.py:25
 msgid "Language"
 msgstr "زبان"
 
-#: models/models.py:47 models/models.py:76
-msgid "Text Phrase"
-msgstr "عبارت متنی"
+#: models.py:12
+msgid "Title"
+msgstr "عنوان"
 
-#: models/models.py:48 models/models.py:77
-msgid "Text Phrases"
-msgstr "عبارات متنی"
+#: models.py:15
+msgid "Image"
+msgstr "عکس"
+
+#: models.py:19
+msgid "Text"
+msgstr "متن"
+
+#: models.py:27
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+#: models.py:29
+msgid "Time Create"
+msgstr "زمان ایجاد"
+
+#: models.py:47 models.py:64
+msgid "Gallery"
+msgstr "گالری"
+
+#: models.py:48 models.py:65
+msgid "Galleries"
+msgstr "گالری"

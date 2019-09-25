@@ -14,6 +14,7 @@ PASS_DATA_CONTEXT_PROCESSOR = getattr(
 
 ALL_LANGUAGES = getattr(settings, 'LANGUAGES', [])
 
+TIMEZONE_COOKIE_NAME = getattr(settings, 'TIMEZONE_COOKIE_NAME', "timezone")
 
 def _get_languages():
     """

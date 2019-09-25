@@ -1,6 +1,8 @@
-import requests
 import pytz
+import requests
 from django.utils import timezone
+
+from handypackages.settings import TIMEZONE_COOKIE_NAME
 
 
 def get_client_ip(request):
@@ -26,15 +28,15 @@ class IP2TimezoneMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        ip_and_time_zone = value = request.COOKIES.get('timezone', None)
+        ip_and_time_zone = value = request.COOKIES.get(TIMEZONE_COOKIE_NAME, None)
         ip = get_client_ip(request)
         if not ip_and_time_zone:
             cookie_value = detect_timezone(request, ip)
             response = self.get_response(request)
-            response.set_cookie('timezone', cookie_value)
+            response.set_cookie(TIMEZONE_COOKIE_NAME, cookie_value)
             return response
         else:
-            cookie_value = request.COOKIES.get('timezone').split(":")
+            cookie_value = request.COOKIES.get(TIMEZONE_COOKIE_NAME).split(":")
             if len(cookie_value) != 2:
                 return self.get_response(request)
             if ip == cookie_value[0]:
@@ -43,5 +45,5 @@ class IP2TimezoneMiddleware:
             else:
                 cookie_value = detect_timezone(request, ip)
                 response = self.get_response(request)
-                response.set_cookie('timezone', cookie_value)
+                response.set_cookie(TIMEZONE_COOKIE_NAME, cookie_value)
                 return response
